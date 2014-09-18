@@ -1,0 +1,22 @@
+- name: Install Apache
+  hosts: all
+  sudo: yes
+  vars: 
+    server_name: foo
+  tasks:
+  - name: 1. Install Apache
+    apt: name=apache2 state=present
+
+  - name: 2. Install PHP5
+    apt: name=php5 state=present
+
+  - name: 3. Install Apache PHP5 module
+    apt: name=libapache2-mod-php5 state=present
+
+  - name: 4. Copy Hello World PHP script
+    template: src=index.php.j2 dest=/var/www/index.php mode=0664
+    notify: Restart Apache
+
+  handlers:
+  - name: Restart Apache
+    service: name=apache2 state=restarted

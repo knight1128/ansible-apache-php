@@ -1,0 +1,17 @@
+<html>
+ <head>
+  <title>Ansible Test App</title>
+ </head>
+ <body>
+ </br>
+    Server name is {{ server_name }}.
+  <a href=http://{{ ansible_eth0.ipv4.address }}/index.html>Homepage</a>
+  <a href=http://{{ ansible_eth0["ipv4"]["address"] }}/index.html>Homepage</a>
+ </br>
+<?php 
+ Print "Hello, World! I am configured Ansible Test App: ";
+  echo exec('hostname');
+?>
+</body>
+</html>
+
