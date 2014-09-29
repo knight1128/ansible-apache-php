@@ -8,4 +8,4 @@ playbook execution
 
 'ssh': connect managed node
 
-'curl -i http://localhost:80/index.php' on vagrant image
+'curl -i http://localhost:80/index.php' on managed node
