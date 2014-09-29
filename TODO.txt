@@ -1,0 +1,11 @@
+
+cat playbook.yml
+
+cat index.php.j2
+
+playbook execution
+./play.sh
+
+'ssh': connect managed node
+
+'curl -i http://localhost:80/index.php' on vagrant image
